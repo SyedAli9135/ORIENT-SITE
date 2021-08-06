@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Page 2</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <style>
+    .mt-0 {
+      margin-top: 30px;
+    }
+
+    .col-xs-3>input {
+      outline: none;
+    }
+
+    input[type=text] {
+      border: none;
+      border-bottom: 2px solid black;
+      padding: 12px 20px;
+      margin: 8px 0;
+      width: 20vw;
+      box-sizing: border-box;
+      display: flex;
+      text-align: center;
+
+
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      color: gray;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .header__body {
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      align-items: flex-end;
+      color: gray;
+      font-size: 2px;
+      margin-right: 10px;
+    }
+
+    .header__content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    .header__content1 {
+      margin-left: 50px;
+      margin-right: 50px;
+
+    }
+
+    .anchors {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      color: black;
+    }
+
+    .navbar-nav.navbar-center {
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+
+    .sidepanel1 {
+      width: 0;
+      position: absolute;
+      z-index: 5;
+      height: 0px;
+      top: 100%;
+      right: 0;
+      background-color: whitesmoke;
+      overflow: hidden;
+      transition: 0.5s;
+
+      font-size: small;
+    }
+
+    .sidepanel1 a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: black;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidepanel1 a:hover {
+      color: gray;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    .openbtn:hover {
+      background-color: gray;
+    }
+
+
+
+
+    .openbtn:hover {
+      background-color: whitesmoke;
+    }
+
+    #navbarNav {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    @media only screen and (max-width: 992px) {
+      #orient {
+        display: none;
+      }
+
+      #navbar-display {
+        display: flex;
+        flex-direction: row;
+        margin-right: auto;
+        margin-left: 20px;
+      }
+
+      #li-navbar {
+        margin-right: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 404px) {
+      #search-nav {
+        display: none;
+      }
+
+      #main a {
+        font-size: 14px;
+      }
+    }
+
+    .sidepanel {
+      width: 0;
+      position: fixed;
+      z-index: 999;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: whitesmoke;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 50px;
+      font-size: small;
+    }
+
+    .sidepanel a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: black;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidepanel a:hover {
+      color: gray;
+    }
+  </style>
+</head>
+
+<script>
+  function handleClick() {
+    const sidepanel = document.getElementById('mySidepanel1');
+    sidepanel.style.width = "300px";
+    sidepanel.style.height = "max-content"
+  }
+  function handleNavClose() {
+    const sidepanel = document.getElementById('mySidepanel1');
+    sidepanel.style.width = "0px";
+    sidepanel.style.height = "0px"
+  }
+</script>
+
+<body>
+
+  <!-- Navbar  -->
+  <nav class="navbar navbar-expand-lg navbar-dark p-md-3">
+    <button class="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <a id="orient" class="navbar-brand" href="LandingPageModified.html"><img src="png_135x 1 1.png" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="search-nav" class="nav navbar-nav navbar-center">
+
+      <input type="text" placeholder="SEARCH" />
+    </div>
+    <div id="navbarNav">
+      <div class="mx-auto"></div>
+      <ul id="navbar-display" class="navbar-nav">
+        <li id="li-navbar" class="nav-item">
+          <a class="nav-link text-dark" href="#">LOG IN</a>
+        </li>
+        <li id="li-navbar" class="nav-item">
+          <a class="nav-link text-dark" href="#">HELP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">
+            <i class="fal fa-shopping-cart"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- header -->
+
+  <div>
+
+
+    <hr />
+    <div id="main" class="header__body">
+      <!-- <h4>VIEW <strong >2</strong> 4 | + FILTERS</h4> -->
+      <a style="font-size: 20px; margin-right: 10px; text-decoration: none;" href="#">VIEW</a>
+      <a href="page2modifiedfinal.html"
+        style="font-size: 20px; margin-right: 10px; color: black; text-decoration: none;">2</a>
+      <a href="#" style="font-size: 20px; margin-right: 10px; text-decoration: none;"><strong>4</strong></a>
+      <a style="color:black; text-decoration: none; padding:0;" class="openbtn" onclick="handleClick()"
+        style="">+FILTERS</a>
+      <div id="mySidepanel1" class="sidepanel1">
+        <a style="display: flex; justify-content: flex-end; font-size: 10px;" href="javascript:void(0)" class="closebtn"
+          onclick="handleNavClose()">CLEAR</a>
+        <a style="font-size: large" href="#">
+          <h3>SIZE</h3>
+        </a>
+        <a style="font-size: medium" href="#">
+          <p>EU 32/ US 0</p>
+        </a>
+        <a style="font-size: medium" href="#">
+          <p>EU 34/ US 2</p>
+        </a>
+        <a style="font-size: medium" href="#">
+          <p>EU 36 / US 4</p>
+        </a>
+        <a style="font-size: medium" href="#">
+          <p>+ VIEW MORE</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <h3>
+            <p>COLOUR</p>
+          </h3>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>BEIGE</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>BLACK</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>BLUE</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>+ VIEW MORE</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <h3>COLLECTION</h3>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>BASIC</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>TRF</p>
+        </a>
+        <a style="font-size: small" href="#">
+          <p>WOMAN</p>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="header__content">
+      <h1>SHOP THE LATEST TRENDS WITH ORIENT NEW IN COLLECTION</h1>
+      <p class="header_content1">
+        Shop the latest clothing trends with our weekly edit of what's new in
+        online at Orient. From our latest women collection and TRF lines,<br />
+        we have dresses, jeans,shoes,bags and more to suit every woman and
+        every occasion. Explore the latest fashion Trends and here now with us
+      </p>
+    </div>
+    <div class="anchors">
+      <p>
+        <b><a style="padding: 10px" href="#">UNSTICHED</a></b>
+      </p>
+      <p>
+        <b><a style="padding: 20px" href="#">PRET</a></b>
+      </p>
+      <p>
+        <b><a style="padding: 20px" href="#">EMBROIDERED</a></b>
+      </p>
+    </div>
+  </div>
+  <!-- body -->
+  <div style="padding: 30px;" class="card-group">
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 56.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PKR 4,990.00</small>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 55.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <h5></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PKR 4,990.00</small>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 63.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PK4 4,990.00</small>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 64.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PK4 4,990.00</small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 40px; padding:30px;" class="card-group">
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 56.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PKR 4,990.00</small>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 55.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <h5></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PKR 4,990.00</small>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 63.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PK4 4,990.00</small>
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0.5rem" class="card border-0">
+      <a href="page4modifiedfinalCheckoutPage.html"><img src="Rectangle 64.png" class="card-img-top" alt="..." /></a>
+      <div class="card-body">
+        <h5 class="card-title"><strong>NEW</strong></h5>
+        <p class="card-text">
+          <strong>UNSTICHED 3PC PREMIUM JACQUARD SUIT</strong>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">PK4 4,990.00</small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer style="padding:150px" class="page-footer">
+
+    <div class="container ">
+      <div class="column text-center d-flex justify-content-center pt-5 mb-3 ">
+        <h1 class="font-weight-bold">JOIN OUR NEWSLETTER </h3>
+      </div>
+      <div class="column text-center d-flex justify-content-center">
+        <div class="col-xs-4">
+          <input type="text" id='search' placeholder="Enter your email here " />
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="column text-center d-flex justify-content-center">
+          <div class="mb-5 flex-center">
+
+            <!-- Facebook -->
+            <a style="padding: 10px;" class="fb-ic">
+              <i class="fab fa-facebook-f fa-lg white-text mr-md-3 mr-3 fa-1x"> </i>
+            </a>
+
+            <!--Instagram-->
+            <a style="padding: 10px;" class="ins-ic">
+              <i class="fab fa-instagram fa-lg white-text mr-md-3 mr-3 fa-1x"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fab fa-youtube fa-lg gray-text fa-1x"> </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase">
+          <p>CUSTOMER SUPPORT</p>
+        </h6>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase">
+          <p>GET TO KNOW US</p>
+        </h6>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase">
+          <p>LET US HELP YOU</p>
+        </h6>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase">
+          <p>ORIENT FOR BUISNESS</p>
+        </h6>
+      </div>
+
+    </div>
+
+    <div class="row text-center d-flex justify-content-center pt-2 mb-3">
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase">
+          <p>PRIVACY POLICY</p>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase">
+          <p>TERMS OF US</p>
+        </h6>
+      </div>
+    </div>
+
+
+
+
+
+
+    </div>
+
+    </div>
+
+    <div class="row">
+      <div class="column ">
+        <img style="margin-left: 2%; " src="easypaisa_small_baf3b389b3bbaba7d502c44cedd01ed8_small-min_small.jpg"
+          width="50px" height="50px" />
+        <img style="margin-left: 2%; " src="2-check-out_small_29a3d2614894a7e0e30bc787fc0f8f55_small-min_small.jpg"
+          width="50px" height="50px" />
+        <img style="margin-left: 2%; " src="visa_small_259a585106fbbbc9bf82bd63a68d2052_1_small-min_small.jpg"
+          height="50px" width="50px" />
+        <img style="margin-left: 2%; " src="MasterCard_Logo_svg_100x40-min_small.jpg" height="50px" width="50px" />
+        <img style="margin-left: 2%; " src="keenu_connect_ae6daffc-1172-4d40-b46a-5d2c94434531_small.jpg" width="50px"
+          height="50px" />
+        <img style="margin-left: 2%; " src="union_pay_e18bd899-d052-4c34-88aa-381954fccd61_small.jpg" height="50px"
+          width="50px" />
+        <img style="margin-left: 50%; " src="iphone_1024x1024 1.png" width="99px" height="33.12px" />
+        <img style="margin-left: 1%;" src="android_1024x1024 1.png" width="99px" height="33.12px" />
+      </div>
+    </div>
+
+
+
+    <div class="footer-copyright text-center py-1">
+      © 2020 Orient Textiles Inc. All Private Limited
+    </div>
+
+  </footer>
+  <script>
+    function openNav() {
+      document.getElementById('mySidepanel').style.width = '350px'
+    }
+
+    function closeNav() {
+      document.getElementById('mySidepanel').style.width = '0'
+    }
+  </script>
+
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" style="font-size:20px;" class="closebtn" onclick="closeNav()">×</a>
+    <a style="font-size: large" href="#">
+      <h1>WOMAN</h1>
+    </a>
+    <a style="font-size: medium" href="#">
+      <p>NEW IN</p>
+    </a>
+    <a style="font-size: medium" href="#">
+      <p>UNSTICHED COLLECTION</p>
+    </a>
+    <a style="font-size: medium" href="#">
+      <p>READY TO WEAR</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <h3>
+        <p>VIEW all</p>
+      </h3>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>PRET</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>UNSTICHED</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>SHIRTS</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>TOPS</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>KNITWEAR</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>PANTS</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>BAGS</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>SHOES</p>
+    </a>
+    <a style="font-size: small" href="#">
+      <p>ACCESSORIES</p>
+    </a>
+  </div>
+
+</body>
+
+</html>
